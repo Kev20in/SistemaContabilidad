@@ -1,0 +1,38 @@
+
+.form-div {
+    height: 100%;
+    width: 535px;
+  }
+.form-div .login-input {
+    width: 466px;
+    height: 49px;
+    border: 1px solid #dde0e4;
+    border-radius: 4px;
+    font-size: 18px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    display: flex;
+  }
+  .form-div .login-input img {
+    width: 18px;
+  }
+  .form-div .login-input input {
+    width: 100%;
+    outline: none;
+    padding-left: 8px;
+  }
+  .form-div .invalid {
+    border: 1px solid red
+  }
+
+.form-div #pass-visibility-icon {
+    margin-right: 15px;
+  }
+  .form-div .login-input input::placeholder {
+    font-size: 18px;
+    color: #4b4b4b;
+    font-weight: 500;
+  }
+  .form-div .login-input #pass-visibility-icon {
+    cursor: pointer;
+  }
