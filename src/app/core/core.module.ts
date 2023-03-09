@@ -5,13 +5,17 @@ import { CoreRoutingModule } from './core-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { MainComponent } from './components/main/main.component';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from '../features/home/home.component';
 
 const declarations = [
   MainComponent
 ]
 @NgModule({
   declarations: [
-    ...declarations
+    ...declarations,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,

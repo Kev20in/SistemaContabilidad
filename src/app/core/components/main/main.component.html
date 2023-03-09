@@ -21,9 +21,8 @@
           </div>
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
-              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="#" class=" rounded-md px-3 py-2 text-sm font-medium {{currentMenuOption === 1 ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}}" (click)="moveTo(1)">Inicio</a><!-- aria-current="page"  -->
-              <a href="#" class=" rounded-md px-3 py-2 text-sm font-medium {{currentMenuOption === 2 ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}}" (click)="moveTo(2)">Tipo de Cuentas</a>
+              <a href="/Home" class=" rounded-md px-3 py-2 text-sm font-medium {{currentMenuOption === 1 ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}}" (click)="moveTo(1)">Inicio</a><!-- aria-current="page"  -->
+              <a href="/AccountType" class=" rounded-md px-3 py-2 text-sm font-medium {{currentMenuOption === 2 ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}}" (click)="moveTo(2)">Tipo de Cuentas</a>
               <a href="#" class=" rounded-md px-3 py-2 text-sm font-medium {{currentMenuOption === 3 ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}}" (click)="moveTo(3)">Sistemas Auxiliares</a>
               <a href="#" class=" rounded-md px-3 py-2 text-sm font-medium {{currentMenuOption === 4 ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}}" (click)="moveTo(4)">Cuentas Contables</a>
               <a href="#" class=" rounded-md px-3 py-2 text-sm font-medium {{currentMenuOption === 5 ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}}" (click)="moveTo(5)">Tipos de Moneda</a>
@@ -54,7 +53,7 @@
 
             <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none {{ isSignOutBoxActive ? 'block' : 'hidden' }}" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
               <!-- Active: "bg-gray-100", Not Active: "" -->
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Cerrar sesión</a>
+              <a href="/login" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Cerrar sesión</a>
             </div>
           </div>
         </div>
@@ -75,7 +74,7 @@
       </div>
     </div>
   </nav>
-  <!-- <router-outlet></router-outlet> -->
+  <router-outlet></router-outlet>
   <header class="bg-white shadow">
     <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
       <h1 class="text-3xl font-bold tracking-tight text-gray-900">Dashboard</h1>
