@@ -1,1 +1,43 @@
-<p>account-types works!</p>
+<header class="bg-white shadow">
+    <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-bold tracking-tight text-gray-900">Tipo de Cuentas Contable</h1>
+    </div>
+  </header>
+  <main>
+    <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+      <!-- Your content -->
+
+      <button class="primary-btn-style2 mt-8 mb-4 ml-8" > <!-- (click)="openModalWindow('add-ledger')" -->
+        Nueva cuenta</button> 
+      <div class="table-content">
+      <table class="table-conteiner conteiner action-check-table action-btn-table ">
+        <thead>
+          <tr class="sticky">
+            <th class="pl-4 w-32">
+              Código
+            </th>
+            <th class="pl-2">
+              Descripcion
+            </th>
+            <th class="pl-2">Origen</th>
+            <th class="pl-2">Estado</th>
+            <th class="pl-1">Acciones</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of tipoCuentaData">
+            <td class="pl-2 ">{{ data.codigo }}</td>
+            <td class="pl-2 ">{{ data.descripcion}}</td>
+            <td class="pl-2 ">{{ data.origen }}</td>
+            <td class="pl-2 ">{{ data.origen }}</td>
+            <td class="pl-4">
+              <button >
+                <img alt="Detalle" class="item-center" src="/assets/img/details-btn.svg" />
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+    
+  </main>

@@ -1,0 +1,219 @@
+.ledger-accounts{
+    width: 100%;
+    background: #fff 0% 0% no-repeat padding-box;
+  }
+  
+  .table-content {
+    border: 2px solid #F3F5F9;
+    border-radius: 12px;
+    margin: 20px 30px;
+    font-family: "Roboto";
+  }
+  
+  .table-conteiner {
+    border: 2px solid #F3F5F9;
+    border-radius: 12px;
+  }
+
+  .form-container .search-input {
+    width: 353px;
+    height: 50px;
+    background: #ffffff5d 0% 0% no-repeat padding-box;
+    border: 2px solid #23234529;
+    border-radius: 12px;
+    padding-left: 15px;
+    outline-color: #1aa5c2;
+  }
+  .form-container .search-input::placeholder {
+    text-align: left;
+    font-size: 18px;
+    color: #afafaf;
+  }
+
+  .table-bottom {
+    font-size: 18px;
+    padding: 25px 0;
+    margin-bottom: 40px;
+    height: 45px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .bottom-page-btn {
+    margin-top: 30px;
+    padding: 10px;
+    width: 110px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+  
+  .bottom-page-btn:hover {
+    color: #ffff;
+    border: 1px solid #00a5c2;
+    background: #00a5c2;
+    border-radius: 12px;
+  }
+  .bottom-page-box {
+    margin-top: 30px;
+    width: 47px;
+    height: 45px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #00a5c2;
+    border: 1px solid #00a5c2;
+    border-radius: 12px;
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+  .bottom-page-box:hover {
+    color: #ffff;
+    background: #00a5c2;
+  }
+  .page-btn {
+    padding-top: 28px;
+    width: 90px;
+  }
+  .bx {
+    margin-top: 30px;
+    width: 47px;
+    height: 49px;
+    border: 1px solid #dde0e4;
+  }
+  .action-check-table th {
+    font-size: 16px;
+    font-weight: bold;
+    color: #696976;
+    text-align: left;
+  }
+  .action-check-table th button {
+    padding: 8px;
+    background: #ffffff;
+    cursor: pointer;
+  }
+  .action-check-table th button img {
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+  }
+  .action-check-table .arrow-icon {
+    width: 10px;
+    right: 2px;
+    transition: all 0.5s ease;
+  }
+  .action-check-table .arrow-icon-rotate {
+    transform: rotate(-180deg);
+    transition: all 0.5s ease;
+  }
+  .action-check-table tr {
+    font-size: 16px;
+    color:#232345;
+    height: 64px;
+  }
+   .noseller-alert{
+    font-size: 18px;
+    width: 100%;
+    height: 64px;
+    padding-left: 25px;
+    color: red;
+  }
+   .action-check-table {
+    width:100%;
+    overflow: auto;
+    height: 100%;
+  }
+  .action-check-table thead {
+    height: 64px;
+    background: #f9fafb 0% 0% no-repeat padding-box;
+  }
+  .action-check-table .td-space {
+    width: 110px;
+  }
+  .action-check-table tr:nth-child(even) {
+    background: #f9fafb 0% 0% no-repeat padding-box;
+  }
+  
+  .arrow {
+    transition: all 0.5s ease;
+  }
+  .arrow-rotate {
+    transform: rotate(-180deg);
+    transition: all 0.5s ease;
+  }
+  .filter-button {
+    text-align: left;
+    width: 112px;
+    height: 49px;
+    background: #f1f2f4 0% 0% no-repeat padding-box;
+    border-radius: 4px; 
+    opacity: 1;
+  }
+  .table-content th:nth-child(1),td:nth-child(1){
+  padding-left: 50px;
+  width: 20%;
+  text-align: left;
+}
+
+/* .table-content th:nth-child(2),td:nth-child(2){
+  padding-left: 20px;
+  width: 40%;
+  text-align: left;
+} */
+
+.table-content td:last-child {
+    text-align: right;
+    width: 20%;
+    padding-right: 95px;
+  }
+  .table-content th:last-child {
+    text-align: right;
+    padding-right: 80px;
+    width: 20%;
+  }
+  .primary-btn-style2 {
+    width: 207px;
+    height: 50px;
+    color: #49a2bf;
+    font-weight: bold;
+    background: #ffffff;
+    border: 2px solid #49a2bf;
+    border-radius: 12px;
+    opacity: 1;
+  }
+  .primary-btn-style2:hover {
+    width: 207px;
+    height: 50px;
+    color: #ffffff;
+    font-weight: normal;
+    background: #49a2bf;
+    border: 2px solid #49a2bf;
+    border-radius: 12px;
+    opacity: 1;
+  }
+  .form-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between !important;
+  }
+
+  .title-div {
+    color: #004990;
+    height: 88px;
+    border: 1px solid #e7e9ec;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 12px;
+    padding: 0 34px;
+  }
+  .title-div h2 {
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .select-radius {
+    border: 1px solid #e7e9ec;
+    border-radius: 12px;
+  }
+  
