@@ -8,6 +8,7 @@ import { AuxiliarSystemComponent } from './auxiliar-system/auxiliar-system.compo
 import { AccountContableComponent } from './account-contable/account-contable.component';
 import { CurrencyTypeComponent } from './currency-type/currency-type.component';
 import { ContableEntriesComponent } from './contable-entries/contable-entries.component';
+import { AddAccountTypesComponent } from './account-types/add-account-types/add-account-types.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ContableEntriesComponent } from './contable-entries/contable-entries.co
     AuxiliarSystemComponent,
     AccountContableComponent,
     CurrencyTypeComponent,
-    ContableEntriesComponent
+    ContableEntriesComponent,
+    AddAccountTypesComponent
   ],
   imports: [
     CommonModule,

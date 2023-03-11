@@ -17,6 +17,22 @@ export class CoreService {
     const url = `${this.serviceUrl}CrearTipoCuentaContable`;
     return this.http.get<TipoCuenta[]>(url);
   }
+  public getCuentaContablebyId(id:number):Observable<TipoCuenta>{
+    const url = `${this.serviceUrl}CrearTipoCuentaContable/${id}`;
+    return this.http.get<TipoCuenta>(url);
+  }
+  public addCuentaContable(form){
+    const url = `${this.serviceUrl}CrearTipoCuentaContable`;
+    return this.http.post(url, form);
+  }
+  public updateCuentaContable(form){
+    const url = `${this.serviceUrl}CrearTipoCuentaContable`;
+    return this.http.put(url, form);
+  }
+  public deletedCuentaContable(id:number){
+    const url = `${this.serviceUrl}CrearTipoCuentaContable/${id}`;
+    return this.http.delete(url);
+  }
 
 
 }

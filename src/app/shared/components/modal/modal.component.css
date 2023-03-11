@@ -1,0 +1,42 @@
+.right-modal {
+    background: #fff;
+    overflow: auto;
+    right: 0;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    border: 1px solid #e7e9ec;
+    z-index: 3;
+  }
+  
+  .right-modal .title-content {
+    height: 87px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .right-modal .modal-title {
+    width: 100%;
+    height: 87px;
+    background: #ffffff;
+    border: 1px solid #e7e9ec;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+  }
+  
+  .right-modal .modal-title h2 {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: left;
+    color: #4B4B4B;
+    opacity: 1;
+  }
+  
+  .right-modal .modal-title .edit-img{
+    width: 46px;
+    height: 46px;
+  } 
+  
+  

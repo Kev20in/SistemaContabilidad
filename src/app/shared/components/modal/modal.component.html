@@ -1,0 +1,13 @@
+<section class="{{ modalWidth ? modalWidth + ' right-modal' : 'w-modalDefault right-modal' }}">
+    <div class="modal-title">
+      <div class="title-content">
+        <img *ngIf="isEditType" class="edit-img mr-3" src="../assets/img/Edit-pencil.svg" />
+        <h2>
+          {{ title }} 
+        </h2>
+      </div>
+      <img class="cursor-pointer {{ !title && 'justify-end' }}" 
+      src="../assets/img/close-icon.svg" alt="close" (click)="closeWindow()" />
+    </div>
+    <ng-content></ng-content>
+  </section>
