@@ -1,0 +1,32 @@
+<section class="edit-client">
+    <form [formGroup]="addAccountContableForm">
+      <div class="form-group grid grid-cols-2 mb-5 normal-input">
+        <div>
+          <label for="firstName">Codigo</label>
+          <input appInput type="text" formControlName="codigo" />
+        </div>
+        <div>
+          <label for="Teléfono celular">Descripcion</label>
+          <input appInput type="text" formControlName="descripcion" />
+        </div>
+      </div>
+      <div class="form-group grid grid-cols-2 mb-5 normal-input">
+        <div>
+          <label for="Teléfono oficina">Ultima Tasa Cambiaria</label>
+          <input appInput type="number" formControlName="ultimaTasaCambiara" />
+        </div>
+        <div>
+          <label for="Centro de costo">Estado</label>
+          <select appInput type="text" formControlName="estado">
+            <option [ngValue]="option1">Activo</option>
+            <option  [ngValue]="option2">Inactivo</option>
+          </select> 
+        </div>
+      </div>
+    </form>
+    <div class="flex justify-end bottom-buttons-container mt-10">
+      <button class="secondary-btn-style mr-10 my-5" (click)="closeWindow()">Cancelar</button>
+      <button *ngIf="!isEdit" class="primary-btn-style mr-10 my-5" (click)="addClient(addAccountContableForm.value)">Guardar</button>
+      <button *ngIf="isEdit" class="primary-btn-style mr-10 my-5" (click)="updateClient(addAccountContableForm.value)">Editar</button>
+    </div>
+  </section>

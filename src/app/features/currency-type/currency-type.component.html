@@ -1,1 +1,77 @@
-<p>currency-type works!</p>
+<header class="bg-white shadow">
+    <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-bold tracking-tight text-gray-900">Tipo de Moneda</h1>
+    </div>
+  </header>
+  <main>
+    <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+      <!-- Your content -->
+
+      <button class="primary-btn-style2 mt-8 mb-4 ml-8" (click)="openModalWindow('add')" > 
+        Añadir Tipo de Moneda</button> 
+      <div class="table-content">
+      <table class="table-conteiner conteiner action-check-table action-btn-table ">
+        <thead>
+          <tr class="sticky">
+            <th class="pl-4">
+              Id
+            </th>
+            <th class="pl-2">
+                Código
+            </th>
+            <th class="pl-2">
+              Descripcion
+            </th>
+            <th class="pl-2">Ultima Tasa </th>
+            <th class="pl-2">Estado</th>
+            <th class="pl-2">Acciones</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of tipoCuentaData">
+            <td class="pl-2 ">{{ data.id }}</td>
+            <td class="pl-2 ">{{ data.codigo }}</td>
+            <td class="pl-2 ">{{ data.descripcion}}</td>
+            <td class="pl-2 ">{{ data.ultimaTasaCambiara }}</td>
+            <td class="pl-2 ">
+              <div *ngIf="data.estado === true" class="status-btn bg-green-500 pt-1 px-4">
+              Activo
+              </div>
+              <div *ngIf="data.estado === false" class="status-btn bg-red-500 pt-1 px-3">
+              Inactivo
+              </div>
+            </td>
+            <td class="pl-4 justify-between">
+              <button  (click)="openModalWindow('edit',data.id)" class="mr-5 flex-row  rounded-md bg-amber-400 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-amber-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400">
+                <img alt="Detalle" class="item-center" src="../../../assets/img/edit-pencil.svg" />
+              </button>
+              <button (click)="deleted(data.id)" class="mr-5 rounded-md bg-red-500 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500">
+                <img alt="Detalle" class="item-center" src="../../../assets/img/delete-item.svg" />
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+    
+  </main>
+
+  <div [ngSwitch]="modalActiveWindow">
+    <app-modal
+      title="Añadir Tipo de Moneda"
+      *ngSwitchCase="'add'"
+      (closeEvent)="closeModalWindow($event)"
+      [modalActiveWindow]="modalActiveWindow"
+    >
+    <app-add-currency-type (clientUpdated)="getCuentas()" (closeEvent)="closeModalWindow($event)" ></app-add-currency-type>
+    </app-modal>
+    <app-modal
+      title="Editar Tipo de Moneda"
+      *ngSwitchCase="'edit'"
+      (closeEvent)="closeModalWindow($event)"
+      [modalActiveWindow]="modalActiveWindow"
+    >
+    <app-add-currency-type [cuantaId]="cuentaId" (clientUpdated)="getCuentas()" (closeEvent)="closeModalWindow($event)" ></app-add-currency-type>
+    </app-modal>
+  </div>
+  

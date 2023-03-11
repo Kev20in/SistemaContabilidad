@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { TipoCuenta } from '@features/account-types/account-types.component';
 import { AuxiliarSystem } from '@features/auxiliar-system/auxiliar-system.component';
+import { TipoMoneda } from '@features/currency-type/currency-type.component';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
@@ -57,5 +58,74 @@ public deletedSistemasAuxiliares(id:number){
   return this.http.delete(url);
 }
 
+//TipoMoneda//
+
+public getTipoMoneda():Observable<TipoMoneda[]>{
+  const url = `${this.serviceUrl}TipoMoneda`;
+  return this.http.get<TipoMoneda[]>(url);
+}
+public getTipoMonedabyId(id:number):Observable<TipoMoneda>{
+  const url = `${this.serviceUrl}TipoMoneda/${id}`;
+  return this.http.get<TipoMoneda>(url);
+}
+public addTipoMoneda(form){
+  const url = `${this.serviceUrl}TipoMoneda`;
+  return this.http.post(url, form);
+}
+public updateTipoMoneda(form){
+  const url = `${this.serviceUrl}TipoMoneda`;
+  return this.http.put(url, form);
+}
+public deletedTipoMoneda(id:number){
+  const url = `${this.serviceUrl}TipoMoneda/${id}`;
+  return this.http.delete(url);
+}
+
+//CuentaContable//
+
+public getCuentaContables():Observable<TipoMoneda[]>{
+  const url = `${this.serviceUrl}CuentaContable`;
+  return this.http.get<TipoMoneda[]>(url);
+}
+public getCuentaContablesbyId(id:number):Observable<TipoMoneda>{
+  const url = `${this.serviceUrl}CuentaContable/${id}`;
+  return this.http.get<TipoMoneda>(url);
+}
+public addCuentaContables(form){
+  const url = `${this.serviceUrl}CuentaContable`;
+  return this.http.post(url, form);
+}
+public updateCuentaContables(form){
+  const url = `${this.serviceUrl}CuentaContable`;
+  return this.http.put(url, form);
+}
+public deletedCuentaContables(id:number){
+  const url = `${this.serviceUrl}CuentaContable/${id}`;
+  return this.http.delete(url);
+}
+
+
+//EntradaContable//
+
+public getEntradaContable():Observable<TipoMoneda[]>{
+  const url = `${this.serviceUrl}EntradaContable`;
+  return this.http.get<TipoMoneda[]>(url);
+}
+public getEntradaContablebyId(id:number):Observable<TipoMoneda>{
+  const url = `${this.serviceUrl}EntradaContable/${id}`;
+  return this.http.get<TipoMoneda>(url);
+}
+public addEntradaContable(form){
+  const url = `${this.serviceUrl}EntradaContable`;
+  return this.http.post(url, form);
+}
+public updateEntradaContable(form){
+  const url = `${this.serviceUrl}EntradaContable`;
+  return this.http.put(url, form);
+}
+public deletedEntradaContable(id:number){
+  const url = `${this.serviceUrl}EntradaContable/${id}`;
+  return this.http.delete(url);
+}
 
 }
