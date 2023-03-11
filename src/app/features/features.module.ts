@@ -11,6 +11,8 @@ import { ContableEntriesComponent } from './contable-entries/contable-entries.co
 import { AddAccountTypesComponent } from './account-types/add-account-types/add-account-types.component';
 import { AddAuxiliarSystemComponent } from './auxiliar-system/add-auxiliar-system/add-auxiliar-system.component';
 import { AddCurrencyTypeComponent } from './currency-type/add-currency-type/add-currency-type.component';
+import { AddAccountContableComponent } from './account-contable/add-account-contable/add-account-contable.component';
+import { AddContableEntriesComponent } from './contable-entries/add-contable-entries/add-contable-entries.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { AddCurrencyTypeComponent } from './currency-type/add-currency-type/add-
     ContableEntriesComponent,
     AddAccountTypesComponent,
     AddAuxiliarSystemComponent,
-    AddCurrencyTypeComponent
+    AddCurrencyTypeComponent,
+    AddAccountContableComponent,
+    AddContableEntriesComponent
   ],
   imports: [
     CommonModule,

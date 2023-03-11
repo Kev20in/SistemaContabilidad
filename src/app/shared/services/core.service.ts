@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { CuentaContable } from '@features/account-contable/account-contable.component';
 import { TipoCuenta } from '@features/account-types/account-types.component';
 import { AuxiliarSystem } from '@features/auxiliar-system/auxiliar-system.component';
 import { TipoMoneda } from '@features/currency-type/currency-type.component';
@@ -83,13 +84,13 @@ public deletedTipoMoneda(id:number){
 
 //CuentaContable//
 
-public getCuentaContables():Observable<TipoMoneda[]>{
+public getCuentaContables():Observable<CuentaContable[]>{
   const url = `${this.serviceUrl}CuentaContable`;
-  return this.http.get<TipoMoneda[]>(url);
+  return this.http.get<CuentaContable[]>(url);
 }
-public getCuentaContablesbyId(id:number):Observable<TipoMoneda>{
+public getCuentaContablesbyId(id:number):Observable<CuentaContable>{
   const url = `${this.serviceUrl}CuentaContable/${id}`;
-  return this.http.get<TipoMoneda>(url);
+  return this.http.get<CuentaContable>(url);
 }
 public addCuentaContables(form){
   const url = `${this.serviceUrl}CuentaContable`;
