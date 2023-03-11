@@ -36,17 +36,6 @@ export class AccountTypesComponent implements OnInit {
     this.modalActiveWindow = closeModalValue;
   }
 
-  public add(){
-    const add = {
-      codigo: "001",
-      descripcion: "123",
-      origen: "123",
-      estado: true
-    }
-    this.service.addCuentaContable(add).subscribe();
-
-  }
-
   public deleted(id):void{
     this.service.deletedCuentaContable(id).subscribe();
 /*     this.getCuentas() */
