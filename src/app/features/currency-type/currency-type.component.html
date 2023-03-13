@@ -44,7 +44,7 @@
               <button  (click)="openModalWindow('edit',data.id)" class="mr-5 flex-row  rounded-md bg-amber-400 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-amber-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400">
                 <img alt="Detalle" class="item-center" src="../../../assets/img/edit-pencil.svg" />
               </button>
-              <button (click)="deleted(data.id)" class="mr-5 rounded-md bg-red-500 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500">
+              <button (click)="deleted(data.id)" href="/CurrencyType" class="mr-5 rounded-md bg-red-500 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500">
                 <img alt="Detalle" class="item-center" src="../../../assets/img/delete-item.svg" />
               </button>
             </td>
@@ -71,7 +71,7 @@
       (closeEvent)="closeModalWindow($event)"
       [modalActiveWindow]="modalActiveWindow"
     >
-    <app-add-currency-type [cuantaId]="cuentaId" (clientUpdated)="getCuentas()" (closeEvent)="closeModalWindow($event)" ></app-add-currency-type>
+    <app-add-currency-type [cuantaId]="cuentaId" (clientUpdated)="updateCuentas()" (closeEvent)="closeModalWindow($event)" ></app-add-currency-type>
     </app-modal>
   </div>
   

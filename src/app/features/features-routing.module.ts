@@ -9,6 +9,9 @@ import { CurrencyTypeComponent } from './currency-type/currency-type.component';
 
 const routes: Routes = [
   {
+    path: '', redirectTo: '/Home', pathMatch:'full'
+  },
+  {
     path: 'Home',
     component: HomeComponent
   },

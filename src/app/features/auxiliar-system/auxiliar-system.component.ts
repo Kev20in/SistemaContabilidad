@@ -22,6 +22,16 @@ export class AuxiliarSystemComponent implements OnInit {
     })
   }
 
+  public updateCuentas(){
+    setTimeout(() => {
+      this.service.getSistemasAuxiliares().subscribe((data)=>{
+        this.tipoCuentaData = data
+      });
+    }, 200 )
+  
+  }
+
+
   public modalActiveWindow: string;
   public openModalWindow(windowName: string, id?:number): void {
     this.modalActiveWindow = windowName;
@@ -37,7 +47,7 @@ export class AuxiliarSystemComponent implements OnInit {
 
   public deleted(id):void{
     this.service.deletedSistemasAuxiliares(id).subscribe();
-/*     this.getCuentas() */
+    this.updateCuentas();
   }
 
 

@@ -65,7 +65,7 @@
       (closeEvent)="closeModalWindow($event)"
       [modalActiveWindow]="modalActiveWindow"
     >
-    <app-add-auxiliar-system [cuantaId]="cuentaId" (clientUpdated)="getCuentas()" (closeEvent)="closeModalWindow($event)" ></app-add-auxiliar-system>
+    <app-add-auxiliar-system [cuantaId]="cuentaId" (clientUpdated)="updateCuentas()" (closeEvent)="closeModalWindow($event)" ></app-add-auxiliar-system>
     </app-modal>
   </div>
   

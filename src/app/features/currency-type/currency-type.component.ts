@@ -22,6 +22,15 @@ export class CurrencyTypeComponent implements OnInit {
     })
   }
 
+  public updateCuentas(){
+    setTimeout(() => {
+      this.service.getTipoMoneda().subscribe((data)=>{
+        this.tipoCuentaData = data
+      });
+    }, 200 )
+  
+  }
+
   public modalActiveWindow: string;
   public openModalWindow(windowName: string, id?:number): void {
     this.modalActiveWindow = windowName;
@@ -37,7 +46,7 @@ export class CurrencyTypeComponent implements OnInit {
 
   public deleted(id):void{
     this.service.deletedTipoMoneda(id).subscribe();
-/*     this.getCuentas() */
+    this.updateCuentas();
   }
 
 

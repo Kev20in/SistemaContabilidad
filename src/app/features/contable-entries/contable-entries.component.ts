@@ -9,7 +9,7 @@ import { CoreService } from '@shared/services/core.service';
 export class ContableEntriesComponent implements OnInit {
 
   constructor(private readonly service: CoreService) { }
-  public tipoCuentaData: TipoCuenta[];
+  public tipoCuentaData: EntradaContable[];
   public menuOption = false;
   public cuentaId :number;
   ngOnInit(): void {
@@ -17,9 +17,17 @@ export class ContableEntriesComponent implements OnInit {
   }
 
   public getCuentas(){
-    this.service.getCuentaContable().subscribe((data)=>{
+    this.service.getEntradaContable().subscribe((data)=>{
       this.tipoCuentaData = data
     })
+  }
+  public updateCuentas(){
+    setTimeout(() => {
+      this.service.getEntradaContable().subscribe((data)=>{
+        this.tipoCuentaData = data
+      });
+    }, 500 )
+  
   }
 
   public modalActiveWindow: string;
@@ -36,7 +44,7 @@ export class ContableEntriesComponent implements OnInit {
   }
 
   public deleted(id):void{
-    this.service.deletedCuentaContable(id).subscribe();
+    this.service.deletedEntradaContable(id).subscribe();
 /*     this.getCuentas() */
   }
 
@@ -45,7 +53,7 @@ export class ContableEntriesComponent implements OnInit {
 }
 
 
-export interface TipoCuenta {
+export interface EntradaContable {
   id: number,
   codigo: string,
   descripcion: string,

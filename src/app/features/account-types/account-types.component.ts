@@ -23,6 +23,16 @@ export class AccountTypesComponent implements OnInit {
     })
   }
 
+  
+  public updateCuentas(){
+    setTimeout(() => {
+      this.service.getCuentaContable().subscribe((data)=>{
+        this.tipoCuentaData = data
+      });
+    }, 200 )
+  
+  }
+
   public modalActiveWindow: string;
   public openModalWindow(windowName: string, id?:number): void {
     this.modalActiveWindow = windowName;
@@ -38,7 +48,7 @@ export class AccountTypesComponent implements OnInit {
 
   public deleted(id):void{
     this.service.deletedCuentaContable(id).subscribe();
-/*     this.getCuentas() */
+    this.updateCuentas()
   }
 
 

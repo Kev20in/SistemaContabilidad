@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { CuentaContable } from '@features/account-contable/account-contable.component';
 import { TipoCuenta } from '@features/account-types/account-types.component';
 import { AuxiliarSystem } from '@features/auxiliar-system/auxiliar-system.component';
+import { EntradaContable } from '@features/contable-entries/contable-entries.component';
 import { TipoMoneda } from '@features/currency-type/currency-type.component';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
@@ -108,13 +109,13 @@ public deletedCuentaContables(id:number){
 
 //EntradaContable//
 
-public getEntradaContable():Observable<TipoMoneda[]>{
+public getEntradaContable():Observable<EntradaContable[]>{
   const url = `${this.serviceUrl}EntradaContable`;
-  return this.http.get<TipoMoneda[]>(url);
+  return this.http.get<EntradaContable[]>(url);
 }
-public getEntradaContablebyId(id:number):Observable<TipoMoneda>{
+public getEntradaContablebyId(id:number):Observable<EntradaContable>{
   const url = `${this.serviceUrl}EntradaContable/${id}`;
-  return this.http.get<TipoMoneda>(url);
+  return this.http.get<EntradaContable>(url);
 }
 public addEntradaContable(form){
   const url = `${this.serviceUrl}EntradaContable`;
