@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/8a68b82f-83db-4b25-a3ff-e788a0d78d1c/resourceGroups/Lean-Group2/providers/Microsoft.Web/sites/Sistema-Contabilidad-app",
+    "appService.deploySubpath": "."
+}
