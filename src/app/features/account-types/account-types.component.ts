@@ -12,7 +12,7 @@ export class AccountTypesComponent implements OnInit {
   constructor(private readonly service: CoreService) { }
   public tipoCuentaData: TipoCuenta[];
   public menuOption = false;
-  public cuentaId :number;
+  public cuentaId :string;
   ngOnInit(): void {
     this.getCuentas();
   }
@@ -34,7 +34,7 @@ export class AccountTypesComponent implements OnInit {
   }
 
   public modalActiveWindow: string;
-  public openModalWindow(windowName: string, id?:number): void {
+  public openModalWindow(windowName: string, id?:string): void {
     this.modalActiveWindow = windowName;
     this.menuOption = false;
     if(id){
@@ -57,7 +57,7 @@ export class AccountTypesComponent implements OnInit {
 
 
 export interface TipoCuenta {
-  id: number,
+  _id: string,
   codigo: string,
   descripcion: string,
   origen: string,

@@ -18,23 +18,23 @@ export class CoreService {
   constructor(private readonly http: HttpClient,) { }
 //tipo de cuenta//
   public getCuentaContable():Observable<TipoCuenta[]>{
-    const url = `${this.serviceUrl}CrearTipoCuentaContable`;
+    const url = `${this.serviceUrl}account-type`;
     return this.http.get<TipoCuenta[]>(url);
   }
-  public getCuentaContablebyId(id:number):Observable<TipoCuenta>{
-    const url = `${this.serviceUrl}CrearTipoCuentaContable/${id}`;
+  public getCuentaContablebyId(id:string):Observable<TipoCuenta>{
+    const url = `${this.serviceUrl}account-type/${id}`;
     return this.http.get<TipoCuenta>(url);
   }
   public addCuentaContable(form){
-    const url = `${this.serviceUrl}CrearTipoCuentaContable`;
+    const url = `${this.serviceUrl}account-type/add`;
     return this.http.post(url, form);
   }
-  public updateCuentaContable(form){
-    const url = `${this.serviceUrl}CrearTipoCuentaContable`;
+  public updateCuentaContable(id:string,form){
+    const url = `${this.serviceUrl}account-type/update/${id}`;
     return this.http.put(url, form);
   }
-  public deletedCuentaContable(id:number){
-    const url = `${this.serviceUrl}CrearTipoCuentaContable/${id}`;
+  public deletedCuentaContable(id:string){
+    const url = `${this.serviceUrl}account-type/delete/${id}`;
     return this.http.delete(url);
   }
 // sistemas auxiliares  SistemasAuxiliares// 

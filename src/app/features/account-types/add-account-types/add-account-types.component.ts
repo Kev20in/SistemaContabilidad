@@ -12,7 +12,7 @@ export class AddAccountTypesComponent implements OnInit {
 
   public isSelectInvalid = false;
   public isEdit = false;
-  @Input() public cuantaId:number;
+  @Input() public cuantaId:string;
   @Output() public clientUpdated = new EventEmitter();
   @Output() public closeEvent = new EventEmitter();
 
@@ -32,7 +32,7 @@ export class AddAccountTypesComponent implements OnInit {
     this.isEdit = true
     this.service.getCuentaContablebyId(this.cuantaId).subscribe((data)=>{
       this.addAccountContableForm = this.formBuilder.group({
-        id: data.id,
+        id: data._id,
         codigo: data.codigo,
         descripcion: data.descripcion,
         origen:data.origen,
@@ -63,7 +63,7 @@ export class AddAccountTypesComponent implements OnInit {
     this.closeWindow();
   }
   public updateClient(edit): void {
-    this.service.updateCuentaContable(edit).subscribe();
+    this.service.updateCuentaContable(this.cuantaId,edit).subscribe();
     this.closeWindow();
   }
 }

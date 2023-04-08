@@ -11,7 +11,7 @@ export class AccountContableComponent implements OnInit {
   constructor(private readonly service: CoreService) { }
   public tipoCuentaData: CuentaContable[];
   public menuOption = false;
-  public cuentaId :number;
+  public cuentaId :string;
   ngOnInit(): void {
     this.getCuentas();
   }
@@ -23,7 +23,7 @@ export class AccountContableComponent implements OnInit {
   }
 
   public modalActiveWindow: string;
-  public openModalWindow(windowName: string, id?:number): void {
+  public openModalWindow(windowName: string, id?:string): void {
     this.modalActiveWindow = windowName;
     this.menuOption = false;
     if(id){
@@ -46,7 +46,7 @@ export class AccountContableComponent implements OnInit {
 
 
 export interface CuentaContable {
-  id: number,
+  id: string,
   codigo: string,
   descripcion: string,
   permiteTransaciones: string,
