@@ -11,7 +11,7 @@ export class AuxiliarSystemComponent implements OnInit {
   constructor(private readonly service: CoreService) { }
   public tipoCuentaData: AuxiliarSystem[];
   public menuOption = false;
-  public cuentaId :number;
+  public cuentaId :string;
   ngOnInit(): void {
     this.getCuentas();
   }
@@ -33,7 +33,7 @@ export class AuxiliarSystemComponent implements OnInit {
 
 
   public modalActiveWindow: string;
-  public openModalWindow(windowName: string, id?:number): void {
+  public openModalWindow(windowName: string, id?:string): void {
     this.modalActiveWindow = windowName;
     this.menuOption = false;
     if(id){
@@ -56,7 +56,7 @@ export class AuxiliarSystemComponent implements OnInit {
 
 
 export interface AuxiliarSystem {
-  id: number,
+  _id: string,
   nombre: string,
   estado: boolean
 }

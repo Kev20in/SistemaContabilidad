@@ -40,69 +40,69 @@ export class CoreService {
 // sistemas auxiliares  SistemasAuxiliares// 
 
 public getSistemasAuxiliares():Observable<AuxiliarSystem[]>{
-  const url = `${this.serviceUrl}SistemasAuxiliares`;
+  const url = `${this.serviceUrl}auxiliar-system`;
   return this.http.get<AuxiliarSystem[]>(url);
 }
-public getSistemasAuxiliaresbyId(id:number):Observable<AuxiliarSystem>{
-  const url = `${this.serviceUrl}SistemasAuxiliares/${id}`;
+public getSistemasAuxiliaresbyId(id:string):Observable<AuxiliarSystem>{
+  const url = `${this.serviceUrl}auxiliar-system/${id}`;
   return this.http.get<AuxiliarSystem>(url);
 }
 public addSistemasAuxiliares(form){
-  const url = `${this.serviceUrl}SistemasAuxiliares`;
+  const url = `${this.serviceUrl}auxiliar-system/add`;
   return this.http.post(url, form);
 }
-public updateSistemasAuxiliares(form){
-  const url = `${this.serviceUrl}SistemasAuxiliares`;
+public updateSistemasAuxiliares(id:string, form){
+  const url = `${this.serviceUrl}auxiliar-system/update/${id}`;
   return this.http.put(url, form);
 }
-public deletedSistemasAuxiliares(id:number){
-  const url = `${this.serviceUrl}SistemasAuxiliares/${id}`;
+public deletedSistemasAuxiliares(id:string){
+  const url = `${this.serviceUrl}auxiliar-system/delete/${id}`;
   return this.http.delete(url);
 }
 
 //TipoMoneda//
 
 public getTipoMoneda():Observable<TipoMoneda[]>{
-  const url = `${this.serviceUrl}TipoMoneda`;
+  const url = `${this.serviceUrl}currency-type`;
   return this.http.get<TipoMoneda[]>(url);
 }
-public getTipoMonedabyId(id:number):Observable<TipoMoneda>{
-  const url = `${this.serviceUrl}TipoMoneda/${id}`;
+public getTipoMonedabyId(id:string):Observable<TipoMoneda>{
+  const url = `${this.serviceUrl}currency-type/${id}`;
   return this.http.get<TipoMoneda>(url);
 }
 public addTipoMoneda(form){
-  const url = `${this.serviceUrl}TipoMoneda`;
+  const url = `${this.serviceUrl}currency-type/add`;
   return this.http.post(url, form);
 }
-public updateTipoMoneda(form){
-  const url = `${this.serviceUrl}TipoMoneda`;
+public updateTipoMoneda(id:string, form){
+  const url = `${this.serviceUrl}currency-type/update/${id}`;
   return this.http.put(url, form);
 }
-public deletedTipoMoneda(id:number){
-  const url = `${this.serviceUrl}TipoMoneda/${id}`;
+public deletedTipoMoneda(id:string){
+  const url = `${this.serviceUrl}currency-type/delete/${id}`;
   return this.http.delete(url);
 }
 
 //CuentaContable//
 
 public getCuentaContables():Observable<CuentaContable[]>{
-  const url = `${this.serviceUrl}CuentaContable`;
+  const url = `${this.serviceUrl}account-contable`;
   return this.http.get<CuentaContable[]>(url);
 }
-public getCuentaContablesbyId(id:number):Observable<CuentaContable>{
-  const url = `${this.serviceUrl}CuentaContable/${id}`;
+public getCuentaContablesbyId(id:string):Observable<CuentaContable>{
+  const url = `${this.serviceUrl}account-contable/${id}`;
   return this.http.get<CuentaContable>(url);
 }
 public addCuentaContables(form){
-  const url = `${this.serviceUrl}CuentaContable`;
+  const url = `${this.serviceUrl}account-contable/add`;
   return this.http.post(url, form);
 }
-public updateCuentaContables(form){
-  const url = `${this.serviceUrl}CuentaContable`;
+public updateCuentaContables(id:string, form){
+  const url = `${this.serviceUrl}account-contable/update/${id}`;
   return this.http.put(url, form);
 }
-public deletedCuentaContables(id:number){
-  const url = `${this.serviceUrl}CuentaContable/${id}`;
+public deletedCuentaContables(id:string){
+  const url = `${this.serviceUrl}account-contable/delete/${id}`;
   return this.http.delete(url);
 }
 
@@ -113,19 +113,19 @@ public getEntradaContable():Observable<EntradaContable[]>{
   const url = `${this.serviceUrl}EntradaContable`;
   return this.http.get<EntradaContable[]>(url);
 }
-public getEntradaContablebyId(id:number):Observable<EntradaContable>{
+public getEntradaContablebyId(id:string):Observable<EntradaContable>{
   const url = `${this.serviceUrl}EntradaContable/${id}`;
   return this.http.get<EntradaContable>(url);
 }
 public addEntradaContable(form){
-  const url = `${this.serviceUrl}EntradaContable`;
+  const url = `${this.serviceUrl}EntradaContable/add`;
   return this.http.post(url, form);
 }
 public updateEntradaContable(form){
   const url = `${this.serviceUrl}EntradaContable`;
   return this.http.put(url, form);
 }
-public deletedEntradaContable(id:number){
+public deletedEntradaContable(id:string){
   const url = `${this.serviceUrl}EntradaContable/${id}`;
   return this.http.delete(url);
 }

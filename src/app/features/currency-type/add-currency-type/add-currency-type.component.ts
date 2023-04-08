@@ -11,7 +11,7 @@ export class AddCurrencyTypeComponent implements OnInit {
 
   public isSelectInvalid = false;
   public isEdit = false;
-  @Input() public cuantaId:number;
+  @Input() public cuantaId:string;
   @Output() public clientUpdated = new EventEmitter();
   @Output() public closeEvent = new EventEmitter();
 
@@ -31,7 +31,7 @@ export class AddCurrencyTypeComponent implements OnInit {
     this.isEdit = true
     this.service.getTipoMonedabyId(this.cuantaId).subscribe((data)=>{
       this.addAccountContableForm = this.formBuilder.group({
-        id: data.id,
+        id: data._id,
         codigo: data.codigo,
         descripcion: data.descripcion,
         ultimaTasaCambiara:data.ultimaTasaCambiara,
@@ -54,15 +54,13 @@ export class AddCurrencyTypeComponent implements OnInit {
     });
 
   }
-  /* public selectedValue(value: string, valueToChange: string) {
-    // this.editClientForm.get(valueToChange)?.patchValue(value);
-  } */
+
   public addClient(add): void {
     this.service.addTipoMoneda(add).subscribe();
     this.closeWindow();
   }
   public updateClient(edit): void {
-    this.service.updateTipoMoneda(edit).subscribe();
+    this.service.updateTipoMoneda(this.cuantaId, edit).subscribe();
     this.closeWindow();
   }
 }

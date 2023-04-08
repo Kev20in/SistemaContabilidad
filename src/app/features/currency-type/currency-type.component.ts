@@ -11,7 +11,7 @@ export class CurrencyTypeComponent implements OnInit {
   constructor(private readonly service: CoreService) { }
   public tipoCuentaData: TipoMoneda[];
   public menuOption = false;
-  public cuentaId :number;
+  public cuentaId :string;
   ngOnInit(): void {
     this.getCuentas();
   }
@@ -32,7 +32,7 @@ export class CurrencyTypeComponent implements OnInit {
   }
 
   public modalActiveWindow: string;
-  public openModalWindow(windowName: string, id?:number): void {
+  public openModalWindow(windowName: string, id?:string): void {
     this.modalActiveWindow = windowName;
     this.menuOption = false;
     if(id){
@@ -55,7 +55,7 @@ export class CurrencyTypeComponent implements OnInit {
 
 
 export interface TipoMoneda {
-  id: number,
+  _id: string,
   codigo: string,
   descripcion: string,
   ultimaTasaCambiara: number,

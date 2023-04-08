@@ -11,7 +11,7 @@ export class AddAuxiliarSystemComponent implements OnInit {
 
   public isSelectInvalid = false;
   public isEdit = false;
-  @Input() public cuantaId:number;
+  @Input() public cuantaId:string;
   @Output() public clientUpdated = new EventEmitter();
   @Output() public closeEvent = new EventEmitter();
 
@@ -31,7 +31,7 @@ export class AddAuxiliarSystemComponent implements OnInit {
     this.isEdit = true
     this.service.getSistemasAuxiliaresbyId(this.cuantaId).subscribe((data)=>{
       this.addAccountContableForm = this.formBuilder.group({
-        id: data.id,
+        id: data._id,
         nombre: data.nombre,
         estado: data.estado,
       });
@@ -58,7 +58,7 @@ export class AddAuxiliarSystemComponent implements OnInit {
     this.closeWindow();
   }
   public updateClient(edit): void {
-    this.service.updateSistemasAuxiliares(edit).subscribe();
+    this.service.updateSistemasAuxiliares(this.cuantaId, edit).subscribe();
     this.closeWindow();
   }
 }
