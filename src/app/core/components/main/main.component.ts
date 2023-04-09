@@ -12,6 +12,8 @@ export class MainComponent implements OnInit {
   public userInitials: string;
   public isSignOutBoxActive = false;
   public currentMenuOption: MenuOption;
+  public openMenu = false;
+
   ngOnInit(): void {
     this.userInitials = 'AD';
     this.currentMenuOption = 1
@@ -19,6 +21,9 @@ export class MainComponent implements OnInit {
 
   public moveTo(menuOption:number):void{
     this.currentMenuOption = menuOption;
+  }
+  public openMenus(){
+    this.openMenu = !this.openMenu
   }
 
   public setSignOutBox(): void {

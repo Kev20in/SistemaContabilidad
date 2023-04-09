@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+       "target": "https://mymongodbfunctionappback.azurewebsites.net",
+       "secure": false,
+       "changeOrigin": true
+    }
+ }
