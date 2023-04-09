@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'https://localhost:7012/api/',
+  baseUrl: 'https://mymongodbfunctionappback.azurewebsites.net/api/',
 };
