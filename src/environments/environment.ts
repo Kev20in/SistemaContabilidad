@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   environmentName: 'Development',
 
-  baseUrl: 'http://localhost:3000/',
+  baseUrl: 'https://mymongodbfunctionappback.azurewebsites.net/api/',
   
 };
 

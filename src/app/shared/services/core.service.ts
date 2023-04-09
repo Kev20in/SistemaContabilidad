@@ -16,6 +16,12 @@ export class CoreService {
   private readonly serviceUrl = `${environment.baseUrl}`;
 
   constructor(private readonly http: HttpClient,) { }
+
+  public getMessage():Observable<string>{
+    const url = `${this.serviceUrl}`;
+    return this.http.get<string>(url);
+  }
+
 //tipo de cuenta//
   public getCuentaContable():Observable<TipoCuenta[]>{
     const url = `${this.serviceUrl}account-type`;
