@@ -63,4 +63,13 @@ export class AddCurrencyTypeComponent implements OnInit {
     this.service.updateTipoMoneda(this.cuantaId, edit).subscribe();
     this.closeWindow();
   }
+
+  public updateTasa(){
+    const currency = this.addAccountContableForm.controls['codigo'].value
+    this.service.getCurrency(currency).subscribe((data)=>{
+      this.addAccountContableForm.controls['ultimaTasaCambiara'].patchValue(data.tasa)
+    });
+
+  }
+
 }

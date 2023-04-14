@@ -14,6 +14,7 @@ import { environment } from '../../../environments/environment';
 export class CoreService {
   
   private readonly serviceUrl = `${environment.baseUrl}/`;
+  private readonly secundaryUrl = `${environment.secundaryUrl}`;
 
   constructor(private readonly http: HttpClient,) { }
 
@@ -135,5 +136,9 @@ public deletedEntradaContable(id:string){
   const url = `${this.serviceUrl}EntradaContable/${id}`;
   return this.http.delete(url);
 }
+public getCurrency(currency : string ): Observable<any>{
+  const url = `${this.secundaryUrl}/tasa-cambiaria/${currency}`;
+  return this.http.get<any>(url);
 
+}
 }

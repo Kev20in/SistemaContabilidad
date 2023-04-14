@@ -7,6 +7,8 @@ export const environment = {
   environmentName: 'Development',
 
   baseUrl: 'http://localhost:3000/api',
+  secundaryUrl: 'https://karlus-dev-public-services-app.azurewebsites.net/api/Consult'
+
   
 };
 
