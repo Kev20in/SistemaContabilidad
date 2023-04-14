@@ -13,7 +13,7 @@ import { environment } from '../../../environments/environment';
 })
 export class CoreService {
   
-  private readonly serviceUrl = `${environment.baseUrl}`;
+  private readonly serviceUrl = `${environment.baseUrl}/`;
 
   constructor(private readonly http: HttpClient,) { }
 
@@ -24,7 +24,7 @@ export class CoreService {
 
 //tipo de cuenta//
   public getCuentaContable():Observable<TipoCuenta[]>{
-    const url = `${this.serviceUrl}account-type/get`;
+    const url = `${this.serviceUrl}account-type/`;
     return this.http.get<TipoCuenta[]>(url);
   }
   public getCuentaContablebyId(id:string):Observable<TipoCuenta>{
@@ -46,7 +46,7 @@ export class CoreService {
 // sistemas auxiliares  SistemasAuxiliares// 
 
 public getSistemasAuxiliares():Observable<AuxiliarSystem[]>{
-  const url = `${this.serviceUrl}auxiliar-system/get`;
+  const url = `${this.serviceUrl}auxiliar-system/`;
   return this.http.get<AuxiliarSystem[]>(url);
 }
 public getSistemasAuxiliaresbyId(id:string):Observable<AuxiliarSystem>{
@@ -69,7 +69,7 @@ public deletedSistemasAuxiliares(id:string){
 //TipoMoneda//
 
 public getTipoMoneda():Observable<TipoMoneda[]>{
-  const url = `${this.serviceUrl}currency-type/get`;
+  const url = `${this.serviceUrl}currency-type/`;
   return this.http.get<TipoMoneda[]>(url);
 }
 public getTipoMonedabyId(id:string):Observable<TipoMoneda>{
@@ -92,7 +92,7 @@ public deletedTipoMoneda(id:string){
 //CuentaContable//
 
 public getCuentaContables():Observable<CuentaContable[]>{
-  const url = `${this.serviceUrl}account-contable/get`;
+  const url = `${this.serviceUrl}account-contable/`;
   return this.http.get<CuentaContable[]>(url);
 }
 public getCuentaContablesbyId(id:string):Observable<CuentaContable>{
@@ -116,7 +116,7 @@ public deletedCuentaContables(id:string){
 //EntradaContable//
 
 public getEntradaContable():Observable<EntradaContable[]>{
-  const url = `${this.serviceUrl}EntradaContable/get`;
+  const url = `${this.serviceUrl}EntradaContable/`;
   return this.http.get<EntradaContable[]>(url);
 }
 public getEntradaContablebyId(id:string):Observable<EntradaContable>{

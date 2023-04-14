@@ -14,7 +14,7 @@
           </div>
       </div>
     </form>
-    <div class="flex justify-end bottom-buttons-container mt-10">
+    <div class="flex justify-end bottom-buttons-container absolute bottom-0 right-0 w-full">
       <button class="secondary-btn-style mr-10 my-5" (click)="closeWindow()">Cancelar</button>
       <button *ngIf="!isEdit" class="primary-btn-style mr-10 my-5" (click)="addClient(addAccountContableForm.value)">Guardar</button>
       <button *ngIf="isEdit" class="primary-btn-style mr-10 my-5" (click)="updateClient(addAccountContableForm.value)">Editar</button>

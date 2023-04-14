@@ -27,9 +27,8 @@
             <th class="pl-2">Acciones</th>
         </thead>
         <tbody>
-          <tr *ngFor="let data of tipoCuentaData">
-            <!-- <td class="pl-2 ">{{ <data.id> }}</td> -->
-            <td class="pl-2 ">{{ 1 }}</td>
+          <tr *ngFor="let data of tipoCuentaData; index as i">
+            <td class="pl-2 ">{{ i+ 1 }}</td>
             <td class="pl-2 ">{{ data.codigo }}</td>
             <td class="pl-2 ">{{ data.descripcion}}</td>
             <td class="pl-2 ">{{ data.ultimaTasaCambiara }}</td>
