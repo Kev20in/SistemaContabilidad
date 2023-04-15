@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TipoCuenta } from '@features/account-types/account-types.component';
+import { TipoMoneda } from '@features/currency-type/currency-type.component';
 import { CoreService } from '@shared/services/core.service';
 
 @Component({
@@ -25,20 +27,33 @@ export class AddAccountContableComponent implements OnInit {
   ) {}
 
   public addAccountContableForm: FormGroup;
+  public monedaDropdown:TipoMoneda[];
+  public cuentaDropdown:TipoCuenta[];
 
   public ngOnInit(): void {
     if(this.cuantaId){
     this.isEdit = true
-    this.service.getCuentaContablebyId(this.cuantaId).subscribe((data)=>{
+    this.service.getCuentaContablesbyId(this.cuantaId).subscribe((data)=>{
       this.addAccountContableForm = this.formBuilder.group({
         id: data._id,
         codigo: data.codigo,
         descripcion: data.descripcion,
-        origen:data.origen,
+        permiteTransaciones:data.permiteTransaciones,
+        nivel:data.nivel,
+        cuentaMayor:data.cuentaMayor,
+        balance:data.balance,
+        tipoCuentaContableId:data.tipoCuentaContableId,
+        tipoMonedaId:data.tipoMonedaId,
         estado: data.estado,
       });
     });
     }
+    this.service.getTipoMoneda().subscribe((data)=>{
+      this.monedaDropdown = data
+    })
+    this.service.getCuentaContable().subscribe((data)=>{
+      this.cuentaDropdown = data
+    })
     this.buildForm();
    }
 
@@ -49,7 +64,12 @@ export class AddAccountContableComponent implements OnInit {
     this.addAccountContableForm = this.formBuilder.group({
       codigo: ['', Validators.required],
       descripcion: ['', Validators.required],
-      origen: [''],
+      permiteTransaciones: [''],
+      nivel: [''],
+      cuentaMayor: [''],
+      balance: [''],
+      tipoCuentaContableId: [''],
+      tipoMonedaId: [''],
       estado: [ ],
     });
 
@@ -58,11 +78,11 @@ export class AddAccountContableComponent implements OnInit {
     // this.editClientForm.get(valueToChange)?.patchValue(value);
   } */
   public addClient(add): void {
-    this.service.addCuentaContable(add).subscribe();
+    this.service.addCuentaContables(add).subscribe();
     this.closeWindow();
   }
   public updateClient(edit): void {
-    this.service.updateCuentaContable(this.cuantaId,edit).subscribe();
+    this.service.updateCuentaContables(this.cuantaId,edit).subscribe();
     this.closeWindow();
   }
 }

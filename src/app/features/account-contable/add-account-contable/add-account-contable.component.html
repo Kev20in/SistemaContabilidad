@@ -2,7 +2,7 @@
     <form [formGroup]="addAccountContableForm">
       <div class="form-group grid grid-cols-2 mb-5 normal-input">
         <div>
-          <label for="firstName">ACodigo</label>
+          <label for="firstName">Codigo</label>
           <input appInput type="text" formControlName="codigo" />
         </div>
         <div>
@@ -12,9 +12,42 @@
       </div>
       <div class="form-group grid grid-cols-2 mb-5 normal-input">
         <div>
-          <label for="Teléfono oficina">Origen</label>
-          <input appInput type="text" formControlName="origen" />
+          <label for="firstName">Permite Transaciones</label>
+          <select appInput type="text" formControlName="permiteTransaciones">
+            <option Value="Si">Si</option>
+            <option  Value="No">No</option>
+          </select> 
         </div>
+        <div>
+          <label for="Teléfono celular">Nivel</label>
+          <input appInput type="text" formControlName="nivel" />
+        </div>
+      </div>
+      <div class="form-group grid grid-cols-2 mb-5 normal-input">
+        <div>
+          <label for="firstName">Cuenta Mayor</label>
+          <input appInput type="text" formControlName="cuentaMayor" />
+        </div>
+        <div>
+          <label for="Teléfono celular">balance</label>
+          <input appInput type="text" formControlName="balance" />
+        </div>
+      </div>
+      <div class="form-group grid grid-cols-2 mb-5 normal-input">
+        <div>
+          <label for="firstName">Tipo de Cuenta Contable</label>
+          <select appInput type="text" formControlName="tipoCuentaContableId">
+            <option *ngFor="let cuenta of cuentaDropdown" [ngValue]="cuenta._id" >{{cuenta.descripcion}}</option>
+          </select> 
+        </div>
+        <div>
+          <label for="Teléfono celular">Tipo de Moneda</label>
+          <select appInput type="text" formControlName="tipoMonedaId">
+            <option *ngFor="let moneda of monedaDropdown" [ngValue]="moneda._id" >{{moneda.descripcion}}</option>
+          </select> 
+        </div>
+      </div>
+      <div class="form-group grid grid-cols-2 mb-5 normal-input">
         <div>
           <label for="Centro de costo">Estado</label>
           <select appInput type="text" formControlName="estado">
