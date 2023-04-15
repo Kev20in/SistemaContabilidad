@@ -117,23 +117,23 @@ public deletedCuentaContables(id:string){
 //EntradaContable//
 
 public getEntradaContable():Observable<EntradaContable[]>{
-  const url = `${this.serviceUrl}EntradaContable/`;
+  const url = `${this.serviceUrl}Contable-entries/`;
   return this.http.get<EntradaContable[]>(url);
 }
 public getEntradaContablebyId(id:string):Observable<EntradaContable>{
-  const url = `${this.serviceUrl}EntradaContable/${id}`;
+  const url = `${this.serviceUrl}Contable-entries/${id}`;
   return this.http.get<EntradaContable>(url);
 }
 public addEntradaContable(form){
-  const url = `${this.serviceUrl}EntradaContable/add`;
+  const url = `${this.serviceUrl}Contable-entries/add`;
   return this.http.post(url, form);
 }
-public updateEntradaContable(form){
-  const url = `${this.serviceUrl}EntradaContable`;
+public updateEntradaContable(id:string, form){
+  const url = `${this.serviceUrl}Contable-entries/update/${id}`;
   return this.http.put(url, form);
 }
 public deletedEntradaContable(id:string){
-  const url = `${this.serviceUrl}EntradaContable/${id}`;
+  const url = `${this.serviceUrl}Contable-entries/${id}`;
   return this.http.delete(url);
 }
 public getCurrency(currency : string ): Observable<any>{

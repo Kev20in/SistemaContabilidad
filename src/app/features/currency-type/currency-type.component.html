@@ -31,7 +31,7 @@
             <td class="pl-2 ">{{ i+ 1 }}</td>
             <td class="pl-2 ">{{ data.codigo }}</td>
             <td class="pl-2 ">{{ data.descripcion}}</td>
-            <td class="pl-2 ">{{ data.ultimaTasaCambiara }}</td>
+            <td class="pl-2 ">{{ data.ultimaTasaCambiara | currency }}</td>
             <td class="pl-2 ">
               <div *ngIf="data.estado === true" class="status-btn bg-green-500 pt-1 px-4">
               Activo

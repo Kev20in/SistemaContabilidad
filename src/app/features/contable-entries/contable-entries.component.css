@@ -154,10 +154,14 @@
   .table-content th:nth-child(1),
   td:nth-child(1) {
     padding-left: 50px;
-    width: 20%;
+    width: 10%;
     text-align: left;
   }
-  
+
+  .table-content td:nth-child(5) {
+    padding-left: 50px;
+  }
+   /*
   .table-content td:last-child {
     text-align: center;
     width: 21%;
@@ -168,7 +172,7 @@
     text-align: center;
     padding-right: 50px;
     width: 20%;
-  }
+  } */
   
   .primary-btn-style2 {
     width: 207px;
